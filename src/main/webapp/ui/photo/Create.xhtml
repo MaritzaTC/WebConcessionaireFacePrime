@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePhotoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePhotoLabel_photo_id}" for="photo_id" />
+                    <h:inputText id="photo_id" value="#{photoController.selected.photo_id}" title="#{bundle.CreatePhotoTitle_photo_id}" required="true" requiredMessage="#{bundle.CreatePhotoRequiredMessage_photo_id}"/>
+                    <h:outputLabel value="#{bundle.CreatePhotoLabel_url_photo}" for="url_photo" />
+                    <h:inputText id="url_photo" value="#{photoController.selected.url_photo}" title="#{bundle.CreatePhotoTitle_url_photo}" />
+                    <h:outputLabel value="#{bundle.CreatePhotoLabel_vehicle}" for="vehicle" />
+                    <h:selectOneMenu id="vehicle" value="#{photoController.selected.vehicle}" title="#{bundle.CreatePhotoTitle_vehicle}" >
+                        <f:selectItems value="#{vehicleController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{photoController.create}" value="#{bundle.CreatePhotoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{photoController.prepareList}" value="#{bundle.CreatePhotoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePhotoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

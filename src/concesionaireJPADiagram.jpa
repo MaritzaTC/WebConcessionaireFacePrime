@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="com.udea.webconcesionaire" epkg="entity" v="4.8" rws="_172590202146941" Pws="_172590202146941" cws="_172590202146941" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_172590202146940" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity pt="PAGINATION" compositePrimaryKeyClass="VehiclePK" abs="false" class="Vehicle" v="true" jbn="false" xre="false" m="false" rootElement="_172590202146940" id="_172590202311742">
+        <jpa:ts e="true">
+            <jpa:a>_172590202311743</jpa:a>
+            <jpa:a>_172590203957154</jpa:a>
+            <jpa:a>_172590203987155</jpa:a>
+            <jpa:a>_172590204022956</jpa:a>
+            <jpa:a>_172590204322257</jpa:a>
+            <jpa:a>_172590204361258</jpa:a>
+            <jpa:a>_172590204401959</jpa:a>
+            <jpa:a>_172590223609068</jpa:a>
+            <jpa:a>_172590227198271</jpa:a>
+            <jpa:a>_172590229060073</jpa:a>
+        </jpa:ts>
+        <jpa:hc e="true">
+            <jpa:a>_172590202311743</jpa:a>
+        </jpa:hc>
+        <jpa:eq e="true">
+            <jpa:a>_172590202311743</jpa:a>
+        </jpa:eq>
+        <jpa:con am="PUBLIC" e="true"/>
+        <jpa:con am="PUBLIC" e="true">
+            <jpa:a>_172590202311743</jpa:a>
+            <jpa:a>_172590203957154</jpa:a>
+            <jpa:a>_172590203987155</jpa:a>
+            <jpa:a>_172590204022956</jpa:a>
+            <jpa:a>_172590204322257</jpa:a>
+            <jpa:a>_172590204361258</jpa:a>
+            <jpa:a>_172590204401959</jpa:a>
+            <jpa:a>_172590223609068</jpa:a>
+            <jpa:a>_172590227198271</jpa:a>
+            <jpa:a>_172590229060073</jpa:a>
+        </jpa:con>
+        <jpa:ath>marit</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="make" id="_172590203957154">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="model" id="_172590203987155">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="year_vehicle" id="_172590204022956">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="color" id="_172590204322257">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="mileage" id="_172590204361258">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="description" id="_172590204401959">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" xvt="" name="price" id="_172590223609068">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_172590202588351" connected-attribute-id="_172590227198270" v="true" xvt="" name="photos" id="_172590227198271">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_172590202406045" connected-attribute-id="_172590229060174" v="true" xvt="" name="sales" id="_172590229060073">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="vehicle_id" ft="false" id="_172590202311743">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column unique="true" nullable="false" insertable="true" updatable="true"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Vehicle.findAll">
+            <jpa:query>Select e from Vehicle e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByMake">
+            <jpa:query>Select v from Vehicle v where v.make=:make</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByModel">
+            <jpa:query>Select v from Vehicle v where v.model=:model</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByYear_vehicle">
+            <jpa:query>Select v from Vehicle v where v.year_vehicle=:year_vehicle</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByColor">
+            <jpa:query>Select v from Vehicle v where v.color=:color</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByMileage">
+            <jpa:query>Select v from Vehicle v where v.mileage=:mileage</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByDescription">
+            <jpa:query>Select v from Vehicle v where v.description=:description</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByPrice">
+            <jpa:query>Select v from Vehicle v where v.price=:price</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity pt="PAGINATION" compositePrimaryKeyClass="SalePK" abs="false" class="Sale" v="true" jbn="false" xre="false" m="false" rootElement="_172590202146940" id="_172590202406045">
+        <jpa:ts e="true">
+            <jpa:a>_172590202406046</jpa:a>
+            <jpa:a>_172590209750860</jpa:a>
+            <jpa:a>_172590209785361</jpa:a>
+            <jpa:a>_172590229961277</jpa:a>
+            <jpa:a>_172590229060174</jpa:a>
+        </jpa:ts>
+        <jpa:hc e="true">
+            <jpa:a>_172590202406046</jpa:a>
+        </jpa:hc>
+        <jpa:eq e="true">
+            <jpa:a>_172590202406046</jpa:a>
+        </jpa:eq>
+        <jpa:con am="PUBLIC" e="true">
+            <jpa:a>_172590202406046</jpa:a>
+            <jpa:a>_172590209750860</jpa:a>
+            <jpa:a>_172590209785361</jpa:a>
+            <jpa:a>_172590229961277</jpa:a>
+            <jpa:a>_172590229060174</jpa:a>
+        </jpa:con>
+        <jpa:con am="PUBLIC" e="true"/>
+        <jpa:ath>marit</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="java.util.Calendar" v="true" xvt="" name="sale_date" id="_172590209750860">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:temporal>DATE</jpa:temporal>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" xvt="" name="sale_price" id="_172590209785361">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_172590202498948" connected-attribute-id="_172590229961176" v="true" xvt="" name="customers" id="_172590229961277">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:many-to-many collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_172590202311742" connected-attribute-id="_172590229060073" v="true" xvt="" name="vehicles" id="_172590229060174">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="sale_id" ft="false" id="_172590202406046">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column unique="true" nullable="false" insertable="true" updatable="true"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Sale.findAll">
+            <jpa:query>Select e from Sale e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Sale.findBySale_date">
+            <jpa:query>Select s from Sale s where s.sale_date=:sale_date</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Sale.findBySale_price">
+            <jpa:query>Select s from Sale s where s.sale_price=:sale_price</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity pt="PAGINATION" compositePrimaryKeyClass="CustomerPK" abs="false" class="Customer" v="true" jbn="false" xre="false" m="false" rootElement="_172590202146940" id="_172590202498948">
+        <jpa:ts e="true">
+            <jpa:a>_172590202498949</jpa:a>
+            <jpa:a>_172590212974562</jpa:a>
+            <jpa:a>_172590213003163</jpa:a>
+            <jpa:a>_172590213033164</jpa:a>
+            <jpa:a>_172590213062865</jpa:a>
+            <jpa:a>_172590213088166</jpa:a>
+            <jpa:a>_172590229961176</jpa:a>
+        </jpa:ts>
+        <jpa:hc e="true">
+            <jpa:a>_172590202498949</jpa:a>
+        </jpa:hc>
+        <jpa:eq e="true">
+            <jpa:a>_172590202498949</jpa:a>
+        </jpa:eq>
+        <jpa:con am="PUBLIC" e="true">
+            <jpa:a>_172590202498949</jpa:a>
+            <jpa:a>_172590212974562</jpa:a>
+            <jpa:a>_172590213003163</jpa:a>
+            <jpa:a>_172590213033164</jpa:a>
+            <jpa:a>_172590213062865</jpa:a>
+            <jpa:a>_172590213088166</jpa:a>
+            <jpa:a>_172590229961176</jpa:a>
+        </jpa:con>
+        <jpa:con am="PUBLIC" e="true"/>
+        <jpa:ath>marit</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="first_name" id="_172590212974562">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="last_name" id="_172590213003163">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="email" id="_172590213033164">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="phone" id="_172590213062865">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="address" id="_172590213088166">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_172590202406045" connected-attribute-id="_172590229961277" v="true" xvt="" name="sale" id="_172590229961176">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="customer_id" ft="false" id="_172590202498949">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column unique="true" nullable="false" insertable="true" updatable="true"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Customer.findAll">
+            <jpa:query>Select e from Customer e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByFirst_name">
+            <jpa:query>Select c from Customer c where c.first_name=:first_name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByLast_name">
+            <jpa:query>Select c from Customer c where c.last_name=:last_name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByEmail">
+            <jpa:query>Select c from Customer c where c.email=:email</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByPhone">
+            <jpa:query>Select c from Customer c where c.phone=:phone</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Customer.findByAddress">
+            <jpa:query>Select c from Customer c where c.address=:address</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity pt="PAGINATION" compositePrimaryKeyClass="PhotoPK" abs="false" class="Photo" v="true" jbn="false" xre="false" m="false" rootElement="_172590202146940" id="_172590202588351">
+        <jpa:ts e="true">
+            <jpa:a>_172590202588352</jpa:a>
+            <jpa:a>_172590216391067</jpa:a>
+            <jpa:a>_172590227198270</jpa:a>
+        </jpa:ts>
+        <jpa:hc e="true">
+            <jpa:a>_172590202588352</jpa:a>
+        </jpa:hc>
+        <jpa:eq e="true">
+            <jpa:a>_172590202588352</jpa:a>
+        </jpa:eq>
+        <jpa:con am="PUBLIC" e="true">
+            <jpa:a>_172590202588352</jpa:a>
+            <jpa:a>_172590216391067</jpa:a>
+            <jpa:a>_172590227198270</jpa:a>
+        </jpa:con>
+        <jpa:con am="PUBLIC" e="true"/>
+        <jpa:ath>marit</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="url_photo" id="_172590216391067">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_172590202311742" connected-attribute-id="_172590227198271" v="true" xvt="" name="vehicle" id="_172590227198270">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="photo_id" ft="false" id="_172590202588352">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column unique="true" nullable="false" insertable="true" updatable="true"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Photo.findAll">
+            <jpa:query>Select e from Photo e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Photo.findByUrl_photo">
+            <jpa:query>Select p from Photo p where p.url_photo=:url_photo</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_172590202146941">
+            <i ref="_172590202406045" x="527" y="111"/>
+            <i ref="_172590202588351" x="95" y="172"/>
+            <i ref="_172590202311742" x="287" y="168"/>
+            <i ref="_172590202498948" x="756" y="168"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

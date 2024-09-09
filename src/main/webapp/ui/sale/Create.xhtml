@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSaleTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateSaleLabel_sale_id}" for="sale_id" />
+                    <h:inputText id="sale_id" value="#{saleController.selected.sale_id}" title="#{bundle.CreateSaleTitle_sale_id}" required="true" requiredMessage="#{bundle.CreateSaleRequiredMessage_sale_id}"/>
+                    <h:outputLabel value="#{bundle.CreateSaleLabel_sale_date}" for="sale_date" />
+                   <h:inputText id="sale_date" value="#{saleController.selected.sale_date}" title="#{bundle.CreateSaleTitle_sale_date}">
+            <f:convertDateTime pattern="dd/MM/yyyy" />
+        </h:inputText>
+        <h:message for="sale_date" />
+                    <h:outputLabel value="#{bundle.CreateSaleLabel_sale_price}" for="sale_price" />
+                    <h:inputText id="sale_price" value="#{saleController.selected.sale_price}" title="#{bundle.CreateSaleTitle_sale_price}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{saleController.create}" value="#{bundle.CreateSaleSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{saleController.prepareList}" value="#{bundle.CreateSaleShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSaleIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

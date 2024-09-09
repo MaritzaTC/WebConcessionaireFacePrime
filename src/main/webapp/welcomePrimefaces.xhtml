@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="150" resizable="true" closable="true" collapsible="true">
+                     
+                    <div>
+                          <div class="header-content">
+                            <h1>Concesionario de Autos JAM</h1>
+                            <h2>Encuentra el auto de tus sueños</h2>
+                        </div>
+                    </div>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                  <div class="footer-content">
+        <p>&copy; 2024 Concesionario de Autos JAM. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:info@concesionariodeautosjam.com">info@concesionariodeautosjam.com</a></p>
+        <p>Teléfono: +157 3217878888</p>
+    </div>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Servicios">
+                            <p:menuitem value="Customers" outcome="/ui/customer/List" />
+                            <p:menuitem value="Photos" outcome="/ui/photo/List"  />
+                            <p:menuitem value="Sales" outcome="/ui/sale/List" />
+                            <p:menuitem value="Vehicle" outcome="/ui/vehicle/List" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    Welcome to PrimeFaces
+                      <ui:insert name="content"/>
+                      <h:form>
+                          
+                      </h:form>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditVehicleTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_vehicle_id}" for="vehicle_id" />
+                    <h:inputText id="vehicle_id" value="#{vehicleController.selected.vehicle_id}" title="#{bundle.EditVehicleTitle_vehicle_id}" required="true" requiredMessage="#{bundle.EditVehicleRequiredMessage_vehicle_id}"/>
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_make}" for="make" />
+                    <h:inputText id="make" value="#{vehicleController.selected.make}" title="#{bundle.EditVehicleTitle_make}" />
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_model}" for="model" />
+                    <h:inputText id="model" value="#{vehicleController.selected.model}" title="#{bundle.EditVehicleTitle_model}" />
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_year_vehicle}" for="year_vehicle" />
+                    <h:inputText id="year_vehicle" value="#{vehicleController.selected.year_vehicle}" title="#{bundle.EditVehicleTitle_year_vehicle}" />
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_color}" for="color" />
+                    <h:inputText id="color" value="#{vehicleController.selected.color}" title="#{bundle.EditVehicleTitle_color}" />
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_mileage}" for="mileage" />
+                    <h:inputText id="mileage" value="#{vehicleController.selected.mileage}" title="#{bundle.EditVehicleTitle_mileage}" />
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{vehicleController.selected.description}" title="#{bundle.EditVehicleTitle_description}" />
+                    <h:outputLabel value="#{bundle.EditVehicleLabel_price}" for="price" />
+                    <h:inputText id="price" value="#{vehicleController.selected.price}" title="#{bundle.EditVehicleTitle_price}" />
+                </h:panelGrid>
+                <h:commandLink action="#{vehicleController.update}" value="#{bundle.EditVehicleSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditVehicleViewLink}"/>
+                <br />
+                <h:commandLink action="#{vehicleController.prepareList}" value="#{bundle.EditVehicleShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditVehicleIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
